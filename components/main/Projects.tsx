@@ -8,12 +8,15 @@ const Projects = () => {
       id="projects"
     >
       <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
-        My Projects
+        Portfolio
       </h1>
       <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
         <ProjectCard
           src="/shoeshop.png"
           title="Shoe Shop Website"
+          icon="/web.png"
+          previewUrl="https://marco-andana.github.io/Shoe-Shop-Landing-Page/"
+          detailsUrl="https://github.com/Marco-andana/Shoe-Shop-Landing-Page?tab=readme-ov-file"
           description="Shoe shop website for any of you who want to buy shoe (it was good back then, and now its broken)."
         />
         <ProjectCard
