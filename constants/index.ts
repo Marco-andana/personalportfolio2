@@ -236,8 +236,6 @@ export const Skill_data = [
   
   ];
   
-  
-  
   export const Other_skill = [
     {
       skill_name: "Go",
@@ -247,6 +245,18 @@ export const Skill_data = [
     },
   ];
   
+  export const projectsData = [
+    {
+    id: 1,
+    title: "Game tutorial web app",
+    icon: "/web.png",
+    description: "Web app that built with React JS and Next JS. An app that give the user video based game tutorial. This web also have CI/CD automation",
+    image: "/public/gamemaster.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Marco-andana/GameTutorial-WebApp",
+    previewUrl: "https://game-tutorial-web-mmavqovvk-marco-andanas-projects.vercel.app/",
+    }
+  ]
   
   
   

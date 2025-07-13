@@ -1,7 +1,31 @@
-import React from "react";
+"use client";
+import React, { useState, useRef } from "react";
 import ProjectCard from "../sub/ProjectCard";
+import ProjectTag from "../sub/ProjectTag";
+import { motion, useInView } from "framer-motion";
+import { projectsData } from "@/constants";
 
 const Projects = () => {
+  const [tag, setTag] = useState("All");
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const handleTagChange = (newTag) => {
+    setTag(newTag);
+  }
+
+  const filteredProjects = projectsData.filter((project) =>
+    project.tag.includes(tag)
+  );
+
+  console.log(projectsData)
+  console.log(filteredProjects);
+
+    const cardVariants = {
+    initial: { y: 50, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+  };
+
   return (
     <div
       className="flex flex-col items-center justify-center py-20"
@@ -10,26 +34,51 @@ const Projects = () => {
       <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
         Portfolio
       </h1>
-      <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
-        <ProjectCard
-          src="/shoeshop.png"
-          title="Shoe Shop Website"
-          icon="/web.png"
-          previewUrl="https://marco-andana.github.io/Shoe-Shop-Landing-Page/"
-          detailsUrl="https://github.com/Marco-andana/Shoe-Shop-Landing-Page?tab=readme-ov-file"
-          description="Shoe shop website for any of you who want to buy shoe (it was good back then, and now its broken)."
-        />
-        <ProjectCard
-          src="/todo.png"
-          title="ToDo Web App"
-          description="A Web based application for writing your To-Do List. I create it for my course submission, try it."
-        />
-        <ProjectCard
-          src="/portfolio3.png"
-          title="3d Portfolio with threeJS"
-          description="A Personal portfolio website with 3d implementation. Using ThreeJS."
-        />
-      </div>
+            <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+              <ProjectTag
+                onClick={handleTagChange}
+                name="All"
+                isSelected={tag === "All"}
+              />
+              <ProjectTag
+                onClick={handleTagChange}
+                name="Web"
+                isSelected={tag === "Web"}
+              />
+              <ProjectTag
+                onClick={handleTagChange}
+                name="ML/AI"
+                isSelected={tag === "ML/AI"}
+              />
+              <ProjectTag
+                onClick={handleTagChange}
+                name="Web3"
+                isSelected={tag === "Web3"}
+              />
+            </div>
+      <ul ref={ref} className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
+        {filteredProjects.map((project, index) => {
+          return (
+          <motion.li
+            key={index}
+            variants={cardVariants}
+            initial="initial"
+            animate={isInView ? "animate" : "initial"}
+            transition={{ duration: 0.3, delay: index * 0.4 }}
+          >
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              icon={project.icon}
+              description={project.description}
+              imgUrl={project.image}
+              gitUrl={project.gitUrl}
+              previewUrl={project.previewUrl}
+            />
+          </motion.li>
+          )
+        })}
+      </ul>
     </div>
   );
 };

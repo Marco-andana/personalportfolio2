@@ -2,24 +2,24 @@ import Image from "next/image";
 import React from "react";
 
 interface Props {
-  src: string;
+  imgUrl: string;
   title: string;
   description: string;
   icon: string;
   previewUrl: string;
-  detailsUrl: string;
+  gitUrl: string;
 }
 
-const ProjectCard = ({ src, title, icon, description, previewUrl, detailsUrl }: Props) => {
+const ProjectCard = ({ imgUrl, title, icon, description, previewUrl, gitUrl }: Props) => {
   return (
     <div className="relative overflow-hidden rounded-lg p-6 shadow-lg bg-gray-600 border max-h-[28em] border-[#2A0E61]">
       <div className="relative">
         <Image
-          src={src}
+          src={imgUrl}
           alt={title}
           width={1000}
           height={1000}
-          className="w-full max-h-[14rem] object-cover rounded-lg"
+          className=" max-h-[14rem] object-cover rounded-lg"
         />
       </div>
 
@@ -43,7 +43,7 @@ const ProjectCard = ({ src, title, icon, description, previewUrl, detailsUrl }: 
             className="text-blue-400 hover:underline"
           >Live Preview</a>
           <a
-            href={detailsUrl}
+            href={gitUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-400 hover:underline bg-gray-700 px-6 py-2 my-[-9px] rounded hover:bg-gray-600"
