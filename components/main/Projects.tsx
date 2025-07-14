@@ -56,7 +56,7 @@ const Projects = () => {
                 isSelected={tag === "Web3"}
               />
             </div>
-      <ul ref={ref} className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
+      <ul ref={ref} className="h-full w-full grid md:grid-cols-3 gap-8 md:gap-12 gap-10 px-10">
         {filteredProjects.map((project, index) => {
           return (
           <motion.li

@@ -251,11 +251,41 @@ export const Skill_data = [
     title: "Game tutorial web app",
     icon: "/web.png",
     description: "Web app that built with React JS and Next JS. An app that give the user video based game tutorial. This web also have CI/CD automation",
-    image: "/public/gamemaster.png",
+    image: "/gamemaster.png",
     tag: ["All", "Web"],
     gitUrl: "https://github.com/Marco-andana/GameTutorial-WebApp",
     previewUrl: "https://game-tutorial-web-mmavqovvk-marco-andanas-projects.vercel.app/",
-    }
+    },
+  {
+    id: 2,
+    title: "3d Personal Web",
+    icon: "/web.png",
+    description: "Website portfolio with 3d image that built using three JS",
+    image: "/3dpersonal.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Marco-andana/3d_personal_web",
+    previewUrl: "https://3d-personal-web.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "Shoe shop website",
+    icon: "/web.png",
+    description: "My First ever website that i've build using html,css, and vanilla javascript.",
+    image: "/shoeshop.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Marco-andana/Shoe-Shop-Landing-Page",
+    previewUrl: "https://vercel.com/marco-andanas-projects",
+  },
+  {
+    id: 4,
+    title: "To-do web app",
+    icon: "/web.png",
+    description: "A To-do web application that built with Javascript. Can be used for put a list of todos.",
+    image: "/todoapp.png",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Marco-andana/Todo-app",
+    previewUrl: "https://marco-andana.github.io/Todo-app/",
+  },
   ]
   
   
